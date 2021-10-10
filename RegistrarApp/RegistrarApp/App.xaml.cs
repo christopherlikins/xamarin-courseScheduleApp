@@ -1,8 +1,4 @@
-﻿using RegistrarApp.Services;
-using RegistrarApp.Views;
-using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
 
 namespace RegistrarApp
 {
@@ -13,7 +9,7 @@ namespace RegistrarApp
         {
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
+            
             MainPage = new AppShell();
         }
 
