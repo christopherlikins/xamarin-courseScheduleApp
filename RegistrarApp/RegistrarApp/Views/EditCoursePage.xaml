@@ -1,12 +1,298 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RegistrarApp.Views.EditCoursePage">
+             x:Class="RegistrarApp.Views.EditCoursePage"
+             Title="Edit Course"
+             BackgroundColor="DarkBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <Grid VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    x:Name="TermAssignmentLabel"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Assigned to Term"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Picker
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    x:Name="TermPicker"
+                    Title="Assign/Unassign Term"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Unassigned</x:String>
+                        <x:String>Term One: Fall</x:String>
+                        <x:String>Term Two: Spring</x:String>
+                        <x:String>Term Three: Fall</x:String>
+                        <x:String>Term Four: Spring</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label 
+                    x:Name="CourseNameLabel"
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Text="Course Name"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Editor
+                    x:Name="CourseNameEntryField"
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    Placeholder="course name"
+                    AutoSize="TextChanges"
+                    MaxLength="20"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label
+                    x:Name="CourseStatusLabel"
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Text="Course Status"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Picker
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    x:Name="CourseStatusPicker"
+                    Title="Assign/Unassign Status"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center">
+                    <Picker.Items>
+                        <x:String>Unassigned</x:String>
+                        <x:String>In Progress</x:String>
+                        <x:String>Completed</x:String>
+                        <x:String>Dropped</x:String>
+                        <x:String>Planned To Take</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label
+                    x:Name="CourseStartDateLabel"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Text="Course Start Date"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <DatePicker 
+                    x:Name="CourseStartDatePicker"
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label
+                    x:Name="CourseEndDateLabel"
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Text="Course End Date"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <DatePicker 
+                    x:Name="CourseEndDatePicker"
+                    Grid.Column="1"
+                    Grid.Row="5"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <!-- COURSE INSTRUCTOR AREA -->
+                <Label 
+                    x:Name="CourseInstructorNameLabel"
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Text="Course Instructor Name"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Editor
+                    x:Name="CourseInstructorNameEntryField"
+                    Grid.Column="1"
+                    Grid.Row="6"
+                    Placeholder="CI name"
+                    AutoSize="TextChanges"
+                    MaxLength="20"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label 
+                    x:Name="CourseInstructorPhoneLabel"
+                    Grid.Column="0"
+                    Grid.Row="7"
+                    Text="Course Instructor Phone"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Editor
+                    x:Name="CourseInstructorPhoneEntryField"
+                    Grid.Column="1"
+                    Grid.Row="7"
+                    Placeholder="555-555-5555"
+                    AutoSize="TextChanges"
+                    MaxLength="20"
+                    Keyboard="Telephone"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label 
+                    x:Name="CourseInstructorEmailLabel"
+                    Grid.Column="0"
+                    Grid.Row="8"
+                    Text="Course Instructor Email"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Editor
+                    x:Name="CourseInstructorEmailEntryField"
+                    Grid.Column="1"
+                    Grid.Row="8"
+                    Placeholder="CI Email"
+                    AutoSize="TextChanges"
+                    HorizontalOptions="StartAndExpand"
+                    Keyboard="Email"
+                    VerticalOptions="Center"
+                    />
+                <!--PERFORMANCE ASSESSMENT CONFIGURATION AREA-->
+                <Label 
+                    x:Name="PANameLabel"
+                    Grid.Column="0"
+                    Grid.Row="9"
+                    Text="PA Name"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Editor
+                    x:Name="PANameEntryField"
+                    Grid.Column="1"
+                    Grid.Row="9"
+                    Placeholder="PA Name"
+                    AutoSize="TextChanges"
+                    MaxLength="20"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label
+                    x:Name="PAStartDateLabel"
+                    Grid.Column="0"
+                    Grid.Row="10"
+                    Text="PA Start"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <DatePicker 
+                    x:Name="PAStartDatePicker"
+                    Grid.Column="1"
+                    Grid.Row="10"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label
+                    x:Name="PAEndDateLabel"
+                    Grid.Column="0"
+                    Grid.Row="11"
+                    Text="PA Start"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <DatePicker 
+                    x:Name="PAEndDatePicker"
+                    Grid.Column="1"
+                    Grid.Row="11"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <!--OBJECTIVE ASSESSMENT CONFIG AREA-->
+                <Label 
+                    x:Name="OANameLabel"
+                    Grid.Column="0"
+                    Grid.Row="12"
+                    Text="OA Name"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Editor
+                    x:Name="OANameEntryField"
+                    Grid.Column="1"
+                    Grid.Row="12"
+                    AutoSize="TextChanges"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label
+                    x:Name="OAStartDateLabel"
+                    Grid.Column="0"
+                    Grid.Row="13"
+                    Text="PA Start"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <DatePicker 
+                    x:Name="OAStartDatePicker"
+                    Grid.Column="1"
+                    Grid.Row="13"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Label
+                    x:Name="OAEndDateLabel"
+                    Grid.Column="0"
+                    Grid.Row="14"
+                    Text="OA Start"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <DatePicker 
+                    x:Name="OAEndDatePicker"
+                    Grid.Column="1"
+                    Grid.Row="14"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <!--COURSE NOTES SECTION-->
+                <Label 
+                    x:Name="CourseNotesLabel"
+                    Grid.Column="0"
+                    Grid.Row="15"
+                    Text="Course notes:"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                <Editor
+                    x:Name="CourseNotesEntryField"
+                    Grid.ColumnSpan="2"
+                    Grid.Row="16"
+                    Placeholder="Enter your course notes here!"
+                    AutoSize="TextChanges"
+                    HorizontalOptions="StartAndExpand"
+                    VerticalOptions="Center"
+                    />
+                
+                
+                
+                
+                
+                
+                <!--NEED TO ADD SAVE BUTTON-->
+                
+                
+                
+                
+                
+                
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
