@@ -7,20 +7,17 @@ namespace RegistrarApp.Models
     public class Term
     {
         public int TermID { get; set; }
-        public int CourseListID { get; set; }
         public string TermName { get; set; }
-        public DateTime TermStartDate { get; set; }
-        public DateTime TermEndDate { get; set; }
-
-        public Term(int termId, int courseListId, string termName, DateTime termStartDate, DateTime termEndDate)
+        public DateTime TermStart { get; set; }
+        public DateTime TermEnd { get; set; }
+        public Term (int termId, string termName, DateTime termStart, DateTime termEnd)
         {
             TermID = termId;
-            CourseListID = courseListId;
             TermName = termName;
-            TermStartDate = termStartDate;
-            TermEndDate = termEndDate;
+            TermStart = termStart;
+            TermEnd = termEnd;
         }
-        public Term()
+        public Term ()
         {
 
         }

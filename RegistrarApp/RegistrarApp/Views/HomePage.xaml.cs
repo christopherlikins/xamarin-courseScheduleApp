@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace RegistrarApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RosterListPage : ContentPage
+    public partial class HomePage : ContentPage
     {
-        public RosterListPage()
+        public HomePage()
         {
             InitializeComponent();
         }

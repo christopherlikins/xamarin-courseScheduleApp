@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace RegistrarApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CourseInstructorListPage : ContentPage
+    public partial class EditCoursePage : ContentPage
     {
-        public CourseInstructorListPage()
+        public EditCoursePage()
         {
             InitializeComponent();
         }
