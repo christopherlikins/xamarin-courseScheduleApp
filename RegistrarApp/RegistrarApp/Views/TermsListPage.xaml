@@ -4,13 +4,86 @@
              x:Class="RegistrarApp.Views.TermsListPage"
              BackgroundColor="DarkBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Label
-                x:Name="TestLabel"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button x:Name="TestButton" Text="Test Button" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Label
+                    x:Name="TermsPageHeader"
+                    Text="Terms in your program"
+                    HorizontalOptions="CenterAndExpand" FontSize="Title" />
+                <!--Edit course and date controls for the First Term-->
+                <Button
+                    x:Name="TermOneButton"
+                    Text="Term 01: Fall - Edit Courses" />
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermOneStartButton"
+                        Text="Start"/>
+                    <DatePicker 
+                        x:Name="TermOneStartDatePicker" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermOneEndButton"
+                        Text="End"/>
+                    <DatePicker 
+                        x:Name="TermOneEndDatePicker" />
+                </StackLayout>
+                <!--Edit course and date controls for the Second Term-->
+                <Button
+                    x:Name="TermTwoButton"
+                    Text="Term 02: Spring - Edit Courses" />
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermTwoStartButton"
+                        Text="Start"/>
+                    <DatePicker 
+                        x:Name="TermTwoStartDatePicker" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermTwoEndButton"
+                        Text="End"/>
+                    <DatePicker 
+                        x:Name="TermTwoEndDatePicker" />
+                </StackLayout>
+                <!--Edit course and date controls for the Third Term-->
+                <Button
+                    x:Name="TermThreeButton"
+                    Text="Term 03: Fall - Edit Courses" />
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermThreeStartButton"
+                        Text="Start"/>
+                    <DatePicker 
+                        x:Name="TermThreeStartDatePicker" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermThreeEndButton"
+                        Text="End"/>
+                    <DatePicker 
+                        x:Name="TermThreeEndDatePicker" />
+                </StackLayout>
+                <!--Edit course and date controls for the Fourth Term-->
+                <Button
+                    x:Name="TermFourButton"
+                    Text="Term 04: Spring - Edit Courses" />
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermFourStartButton"
+                        Text="Start"/>
+                    <DatePicker 
+                        x:Name="TermFourStartDatePicker" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        x:Name="TermFourEndButton"
+                        Text="End"/>
+                    <DatePicker 
+                        x:Name="TermFourEndDatePicker" />
+                </StackLayout>
+            
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
