@@ -2,12 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrarApp.Views.CourseListPage"
-             BackgroundColor="Aquamarine">
+             BackgroundColor="DarkBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout VerticalOptions="StartAndExpand">
+                    <Label 
+                        x:Name="AssignCoursesPageTitle"
+                        Text="Assign Courses"
+                        FontSize="Title"
+                        HorizontalOptions="CenterAndExpand" />
+                    <Button x:Name="TestCourseButton" Text="(CourseName) (TermName)" Clicked="TestCourseButton_Clicked"/>
+                </StackLayout>
+                <StackLayout>
+                    <Button x:Name="AddCourseButton" Text="Add Course" Clicked="AddCourseButton_Clicked"/>
+                </StackLayout>
+            </StackLayout>
+
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

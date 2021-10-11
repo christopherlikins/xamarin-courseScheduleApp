@@ -16,5 +16,26 @@ namespace RegistrarApp.Views
         {
             InitializeComponent();
         }
+
+        private async void TermOneButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CourseListPage());
+            
+        }
+
+        private async void TermTwoButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CourseListPage());
+        }
+
+        private async void TermThreeButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CourseListPage());
+        }
+
+        private async void TermFourButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CourseListPage());
+        }
     }
 }

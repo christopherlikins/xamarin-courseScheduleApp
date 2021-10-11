@@ -13,7 +13,8 @@
                 <!--Edit course and date controls for the First Term-->
                 <Button
                     x:Name="TermOneButton"
-                    Text="Term 01: Fall - Edit Courses" />
+                    Text="Term 01: Fall - Edit Courses"
+                    Clicked="TermOneButton_Clicked" />
                 <StackLayout Orientation="Horizontal">
                     <Button
                         x:Name="TermOneStartButton"
@@ -31,7 +32,8 @@
                 <!--Edit course and date controls for the Second Term-->
                 <Button
                     x:Name="TermTwoButton"
-                    Text="Term 02: Spring - Edit Courses" />
+                    Text="Term 02: Spring - Edit Courses"
+                    Clicked="TermTwoButton_Clicked"/>
                 <StackLayout Orientation="Horizontal">
                     <Button
                         x:Name="TermTwoStartButton"
@@ -49,7 +51,8 @@
                 <!--Edit course and date controls for the Third Term-->
                 <Button
                     x:Name="TermThreeButton"
-                    Text="Term 03: Fall - Edit Courses" />
+                    Text="Term 03: Fall - Edit Courses"
+                    Clicked="TermThreeButton_Clicked"/>
                 <StackLayout Orientation="Horizontal">
                     <Button
                         x:Name="TermThreeStartButton"
@@ -67,7 +70,8 @@
                 <!--Edit course and date controls for the Fourth Term-->
                 <Button
                     x:Name="TermFourButton"
-                    Text="Term 04: Spring - Edit Courses" />
+                    Text="Term 04: Spring - Edit Courses"
+                    Clicked="TermFourButton_Clicked"/>
                 <StackLayout Orientation="Horizontal">
                     <Button
                         x:Name="TermFourStartButton"

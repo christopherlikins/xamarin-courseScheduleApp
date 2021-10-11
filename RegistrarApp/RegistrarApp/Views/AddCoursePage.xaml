@@ -1,12 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RegistrarApp.Views.AddCoursePage">
+             x:Class="RegistrarApp.Views.AddCoursePage"
+             BackgroundColor="DarkBlue">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <Grid VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Label
+                    Grid.ColumnSpan="2"
+                    Grid.Row="0"
+                    x:Name="AddCoursePageTitle"
+                    Text="Add Course"
+                    FontSize="Title"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    x:Name="TermAssignmentLabel"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Assigned to Term"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"/>
+                
+                <Picker
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    x:Name="TermPicker"
+                    Title="Assign a Term"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="Center"/>
+            </Grid>
+        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>
