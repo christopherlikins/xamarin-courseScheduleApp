@@ -19,23 +19,23 @@ namespace RegistrarApp.Views
 
         private async void TermOneButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CourseListPage());
+            await Navigation.PushAsync(new CoursesThisTermPage());
             
         }
 
         private async void TermTwoButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CourseListPage());
+            await Navigation.PushAsync(new CoursesThisTermPage());
         }
 
         private async void TermThreeButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CourseListPage());
+            await Navigation.PushAsync(new CoursesThisTermPage());
         }
 
         private async void TermFourButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CourseListPage());
+            await Navigation.PushAsync(new CoursesThisTermPage());
         }
     }
 }

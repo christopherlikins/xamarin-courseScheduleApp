@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RegistrarApp.Views.CourseListPage"
-             BackgroundColor="DarkBlue"
-             Title="All Courses List">
+             x:Class="RegistrarApp.Views.CoursesThisTermPage"
+             Title="Courses this Term"
+             BackgroundColor="DarkBlue">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -11,7 +11,7 @@
                     <Button x:Name="TestCourseButton" Text="(CourseName) (TermName)" Clicked="TestCourseButton_Clicked"/>
                 </StackLayout>
                 <StackLayout>
-                    <Button x:Name="AddCourseButton" Text="Create New Course" Clicked="AddCourseButton_Clicked"/>
+                    <Button x:Name="AddCourseButton" Text="Add/ Edit Courses" Clicked="AddCourseButton_Clicked"/>
                 </StackLayout>
             </StackLayout>
 

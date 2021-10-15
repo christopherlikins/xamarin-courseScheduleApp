@@ -16,5 +16,15 @@ namespace RegistrarApp.Views
         {
             InitializeComponent();
         }
+
+        private void DeleteCourseButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SaveCourseButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
