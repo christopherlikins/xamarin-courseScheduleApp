@@ -17,9 +17,6 @@ namespace RegistrarApp.Views
             InitializeComponent();
         }
 
-        private void SaveCourseButton_Clicked(object sender, EventArgs e)
-        {
 
-        }
     }
 }

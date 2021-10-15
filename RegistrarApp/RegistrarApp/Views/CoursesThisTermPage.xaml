@@ -3,18 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrarApp.Views.CoursesThisTermPage"
              Title="Courses this Term"
+             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
+             x:DataType="viewmodels:TermStartEndDateUpdateViewModel"
              BackgroundColor="DarkBlue">
-    <ContentPage.Content>
+    <ContentPage.BindingContext>
+        <viewmodels:TermStartEndDateUpdateViewModel/>
+    </ContentPage.BindingContext>
         <ScrollView>
             <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Term Start:"/>
+                    <DatePicker Date="{Binding SetNewTermStartTime}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Term Start:"/>
+                    <DatePicker Date="{Binding SetNewTermEndTime}"/>
+                </StackLayout>
+
                 <StackLayout VerticalOptions="StartAndExpand">
-                    <Button x:Name="TestCourseButton" Text="(CourseName) (TermName)" Clicked="TestCourseButton_Clicked"/>
+                    <Button
+                        x:Name="EditCourseButton" 
+                        Text="CourseName - Edit Course" 
+                        Clicked="EditCourseButton_Clicked"/>
                 </StackLayout>
                 <StackLayout>
-                    <Button x:Name="AddCourseButton" Text="Add/ Edit Courses" Clicked="AddCourseButton_Clicked"/>
+                    <Button 
+                        x:Name="AddCourseButton" 
+                        Text="Add/ Edit Courses" 
+                        Clicked="AddCourseButton_Clicked"/>
                 </StackLayout>
             </StackLayout>
 
         </ScrollView>
-    </ContentPage.Content>
+
 </ContentPage>

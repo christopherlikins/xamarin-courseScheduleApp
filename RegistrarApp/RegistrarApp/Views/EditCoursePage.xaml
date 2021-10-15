@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
              x:Class="RegistrarApp.Views.EditCoursePage"
+             x:DataType="viewmodels:AddEditDeleteCourseViewModel"
              Title="Edit Course"
              BackgroundColor="DarkBlue">
-    <ContentPage.Content>
+    <ContentPage.BindingContext>
+        <viewmodels:AddEditDeleteCourseViewModel/>
+    </ContentPage.BindingContext>
         <ScrollView>
             <StackLayout>
                 <Grid VerticalOptions="StartAndExpand">
@@ -273,44 +277,26 @@
                         x:Name="CourseNotesEntryField"
                         Grid.ColumnSpan="2"
                         Grid.Row="16"
-                        Placeholder="Enter your course notes here!"
+                        Placeholder="{Binding TestPopulateNoteFieldDisplay}"
                         AutoSize="TextChanges"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
+                    <Label
+                        Text="{Binding DeletedAddedDisplay}"/>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Button 
-                        x:Name="SaveCourseButton"
-                        Text="Save Course"
-                        Clicked="SaveCourseButton_Clicked"
+                            Text="Save Course"
+                            Command="{Binding SaveCourse}"
                             HorizontalOptions="StartAndExpand"/>
                         <Button 
-                            x:Name="DeleteCourseButton"
                             Text="Delete Course"
-                            Clicked="DeleteCourseButton_Clicked"
+                            Command="{Binding DeleteCourse}"
                             HorizontalOptions="EndAndExpand"
                             BackgroundColor="Red"/>
                     </StackLayout>
 
                 </StackLayout>
             </StackLayout>
-
-
-
-
-
-
-
-            <!--NEED TO ADD SAVE BUTTON-->
-
-
-
-
-
-
-
-
-
         </ScrollView>
-    </ContentPage.Content>
 </ContentPage>

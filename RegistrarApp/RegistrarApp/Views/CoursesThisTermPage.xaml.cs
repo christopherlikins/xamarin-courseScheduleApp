@@ -23,7 +23,8 @@ namespace RegistrarApp.Views
             //onclick assign the courseid to populate the edit course page.
         }
 
-        private async void TestCourseButton_Clicked(object sender, EventArgs e)
+
+        private async void EditCourseButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new EditCoursePage());
         }

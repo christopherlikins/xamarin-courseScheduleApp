@@ -2,93 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrarApp.Views.TermsListPage"
+             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
+             x:DataType="viewmodels:TermStartEndDateUpdateViewModel"
              BackgroundColor="DarkBlue"
              Title="Your Assigned Terms">
-    <ContentPage.Content>
-        <ScrollView>
+    <ContentPage.BindingContext>
+        <viewmodels:TermStartEndDateUpdateViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
             <StackLayout>
-                <Label
-                    x:Name="TermsPageHeader"
-                    Text="Terms in your program"
-                    HorizontalOptions="CenterAndExpand" FontSize="Title" />
                 <!--Edit course and date controls for the First Term-->
                 <Button
                     x:Name="TermOneButton"
                     Text="Term 01: Fall - Course List"
                     Clicked="TermOneButton_Clicked" />
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermOneStartButton"
-                        Text="Start"/>
-                    <DatePicker 
-                        x:Name="TermOneStartDatePicker" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermOneEndButton"
-                        Text="End"/>
-                    <DatePicker 
-                        x:Name="TermOneEndDatePicker" />
-                </StackLayout>
+
                 <!--Edit course and date controls for the Second Term-->
                 <Button
                     x:Name="TermTwoButton"
                     Text="Term 02: Spring - Course List"
                     Clicked="TermTwoButton_Clicked"/>
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermTwoStartButton"
-                        Text="Start"/>
-                    <DatePicker 
-                        x:Name="TermTwoStartDatePicker" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermTwoEndButton"
-                        Text="End"/>
-                    <DatePicker 
-                        x:Name="TermTwoEndDatePicker" />
-                </StackLayout>
+
                 <!--Edit course and date controls for the Third Term-->
                 <Button
                     x:Name="TermThreeButton"
                     Text="Term 03: Fall - Course List"
                     Clicked="TermThreeButton_Clicked"/>
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermThreeStartButton"
-                        Text="Start"/>
-                    <DatePicker 
-                        x:Name="TermThreeStartDatePicker" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermThreeEndButton"
-                        Text="End"/>
-                    <DatePicker 
-                        x:Name="TermThreeEndDatePicker" />
-                </StackLayout>
+
                 <!--Edit course and date controls for the Fourth Term-->
                 <Button
                     x:Name="TermFourButton"
                     Text="Term 04: Spring - Course List"
                     Clicked="TermFourButton_Clicked"/>
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermFourStartButton"
-                        Text="Start"/>
-                    <DatePicker 
-                        x:Name="TermFourStartDatePicker" />
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Button
-                        x:Name="TermFourEndButton"
-                        Text="End"/>
-                    <DatePicker 
-                        x:Name="TermFourEndDatePicker" />
-                </StackLayout>
+
             
             </StackLayout>
         </ScrollView>
-    </ContentPage.Content>
+
 </ContentPage>
