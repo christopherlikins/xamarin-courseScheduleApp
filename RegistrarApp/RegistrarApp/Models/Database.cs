@@ -26,5 +26,10 @@ namespace RegistrarApp.Models
         {
             return _database.InsertAsync(course);
         }
+        public Task<int> SaveTermAsync (Term term)
+        {
+            return _database.InsertAsync(term);
+        }
+
     }
 }
