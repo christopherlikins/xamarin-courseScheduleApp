@@ -6,6 +6,7 @@
              BackgroundColor="DarkBlue">
     <ContentPage.Content>
         <StackLayout>
+            <Button x:Name="PopDatabaseButton" Text="Populate Database" HorizontalOptions="CenterAndExpand" Clicked="PopDatabaseButton_Clicked"/>
             <Label Text="Welcome to your Future!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

@@ -16,7 +16,12 @@ namespace RegistrarApp.Views
         public CourseListPage()
         {
             InitializeComponent();
+            LoadCourseList();
             
+        }
+        async void LoadCourseList()
+        {
+            CourseListListView.ItemsSource = await App.Database.GetCoursesAsync();
         }
 
         private async void TestCourseButton_Clicked(object sender, EventArgs e)

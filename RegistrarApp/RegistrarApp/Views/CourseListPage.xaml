@@ -11,12 +11,12 @@
                     <Button x:Name="TestCourseButton" Text="(CourseName) (TermName)" Clicked="TestCourseButton_Clicked"/>
                 </StackLayout>
                 <StackLayout>   
-                    <ListView ItemsSource="{Binding Course}">
+                    <ListView x:Name="CourseListListView">
                         <ListView.ItemTemplate >
                             <DataTemplate>
                         <ViewCell IsEnabled="True">
                             <StackLayout>
-                            <Label Text="CourseName"/>
+                            <Label Text="{Binding CourseName}"/>
                             </StackLayout>
                         </ViewCell>
                             </DataTemplate>

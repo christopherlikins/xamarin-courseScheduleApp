@@ -272,6 +272,7 @@
                         VerticalOptions="Center"
                         />
                     <Editor
+                        x:Name="CourseNotesEntryField"
                         Grid.ColumnSpan="2"
                         Grid.Row="16"
                         Placeholder="Insert Course Note here"
@@ -280,7 +281,8 @@
                         VerticalOptions="Center"
                         />
                     <Label
-                        Text="{Binding DeletedAddedDisplay}"/>
+                        x:Name="SaveTheCourseLable"
+                        Text="Save the course?"/>
                     <Button 
                         x:Name="SaveCourseButton"
                         Text="Save Course"
