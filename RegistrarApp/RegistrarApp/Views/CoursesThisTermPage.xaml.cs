@@ -28,5 +28,15 @@ namespace RegistrarApp.Views
         {
             await Navigation.PushAsync(new EditCoursePage());
         }
+
+        private void TermEndDatePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
+
+        private void TermStartDatePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+        }
     }
 }

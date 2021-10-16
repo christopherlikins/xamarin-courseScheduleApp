@@ -3,21 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrarApp.Views.CoursesThisTermPage"
              Title="Courses this Term"
-             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
-             x:DataType="viewmodels:TermStartEndDateUpdateViewModel"
+
              BackgroundColor="DarkBlue">
-    <ContentPage.BindingContext>
-        <viewmodels:TermStartEndDateUpdateViewModel/>
-    </ContentPage.BindingContext>
+
         <ScrollView>
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Term Start:"/>
-                    <DatePicker Date="{Binding SetNewTermStartTime}"/>
+                    <DatePicker
+                        x:Name="TermStartDatePicker"
+                        PropertyChanged="TermStartDatePicker_PropertyChanged"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Term Start:"/>
-                    <DatePicker Date="{Binding SetNewTermEndTime}"/>
+                    <DatePicker 
+                        x:Name="TermEndDatePicker"
+                        PropertyChanged="TermEndDatePicker_PropertyChanged"/>
                 </StackLayout>
 
                 <StackLayout VerticalOptions="StartAndExpand">

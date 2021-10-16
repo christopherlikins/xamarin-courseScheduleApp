@@ -2,13 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="RegistrarApp.Views.CourseListPage"
-             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
-             x:DataType="viewmodels:AddEditDeleteCourseViewModel"             
              BackgroundColor="DarkBlue"
              Title="All Courses List">
- <ContentPage.BindingContext>
-        <viewmodels:AddEditDeleteCourseViewModel/>
-    </ContentPage.BindingContext>
+
 
             <StackLayout>
                 <StackLayout VerticalOptions="StartAndExpand">

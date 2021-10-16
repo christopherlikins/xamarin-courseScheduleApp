@@ -1,14 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
              x:Class="RegistrarApp.Views.EditCoursePage"
-             x:DataType="viewmodels:AddEditDeleteCourseViewModel"
              Title="Edit Course"
              BackgroundColor="DarkBlue">
-    <ContentPage.BindingContext>
-        <viewmodels:AddEditDeleteCourseViewModel/>
-    </ContentPage.BindingContext>
         <ScrollView>
             <StackLayout>
                 <Grid VerticalOptions="StartAndExpand">
@@ -277,7 +272,7 @@
                         x:Name="CourseNotesEntryField"
                         Grid.ColumnSpan="2"
                         Grid.Row="16"
-                        Placeholder="{Binding TestPopulateNoteFieldDisplay}"
+                        Placeholder="Insert Course Notes here"
                         AutoSize="TextChanges"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
@@ -286,12 +281,14 @@
                         Text="{Binding DeletedAddedDisplay}"/>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Button 
+                            x:Name="SaveButton"
                             Text="Save Course"
-                            Command="{Binding SaveCourse}"
+                            Clicked="SaveButton_Clicked"
                             HorizontalOptions="StartAndExpand"/>
                         <Button 
+                            x:Name="DeleteCourseButton"
                             Text="Delete Course"
-                            Command="{Binding DeleteCourse}"
+                            Clicked="DeleteCourseButton_Clicked"
                             HorizontalOptions="EndAndExpand"
                             BackgroundColor="Red"/>
                     </StackLayout>

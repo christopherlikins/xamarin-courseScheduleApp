@@ -2,13 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrarApp.Views.TermsListPage"
-             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
-             x:DataType="viewmodels:TermStartEndDateUpdateViewModel"
+
              BackgroundColor="DarkBlue"
              Title="Your Assigned Terms">
-    <ContentPage.BindingContext>
-        <viewmodels:TermStartEndDateUpdateViewModel/>
-    </ContentPage.BindingContext>
+
     <ScrollView>
             <StackLayout>
                 <!--Edit course and date controls for the First Term-->

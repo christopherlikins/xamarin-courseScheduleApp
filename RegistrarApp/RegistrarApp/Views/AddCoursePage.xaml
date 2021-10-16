@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodels="clr-namespace:RegistrarApp.ViewModels"
+
              x:Class="RegistrarApp.Views.AddCoursePage"
-             x:DataType="viewmodels:AddEditDeleteCourseViewModel"
+
              BackgroundColor="DarkBlue"
              Title="Add Course">
-    <ContentPage.BindingContext>
-        <viewmodels:AddEditDeleteCourseViewModel/>
-    </ContentPage.BindingContext>
+
         <ScrollView>
             <StackLayout>
                 <Grid VerticalOptions="StartAndExpand">
@@ -276,7 +274,7 @@
                     <Editor
                         Grid.ColumnSpan="2"
                         Grid.Row="16"
-                        Placeholder="{Binding TestPopulateNoteFieldDisplay}"
+                        Placeholder="Insert Course Note here"
                         AutoSize="TextChanges"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
@@ -284,8 +282,9 @@
                     <Label
                         Text="{Binding DeletedAddedDisplay}"/>
                     <Button 
+                        x:Name="SaveCourseButton"
                         Text="Save Course"
-                        Command="{Binding SaveCourse}"/>
+                        Clicked="SaveCourseButton_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
