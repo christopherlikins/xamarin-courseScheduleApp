@@ -7,10 +7,8 @@
 
 
             <StackLayout>
-                <StackLayout VerticalOptions="StartAndExpand">
-                    <Button x:Name="TestCourseButton" Text="(CourseName) (TermName)" Clicked="TestCourseButton_Clicked"/>
-                </StackLayout>
-                <StackLayout>   
+        <Button x:Name="RefreshClassesButton" Text="Refresh" HorizontalOptions="CenterAndExpand" Clicked="RefreshClassesButton_Clicked"/>
+        <StackLayout>   
                     <ListView x:Name="CourseListListView">
                         <ListView.ItemTemplate >
                             <DataTemplate>

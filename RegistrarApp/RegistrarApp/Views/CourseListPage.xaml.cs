@@ -24,15 +24,14 @@ namespace RegistrarApp.Views
             CourseListListView.ItemsSource = await App.Database.GetCoursesAsync();
         }
 
-        private async void TestCourseButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new EditCoursePage());
-            //onclick assign the courseid to populate the edit course page.
-        }
-
         private async void AddCourseButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddCoursePage());
+        }
+
+        private async void RefreshClassesButton_Clicked(object sender, EventArgs e)
+        {
+            CourseListListView.ItemsSource = await App.Database.GetCoursesAsync();
         }
     }
 }

@@ -6,7 +6,7 @@
 
              BackgroundColor="DarkBlue">
 
-        <ScrollView>
+
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Term Start:"/>
@@ -20,21 +20,25 @@
                         x:Name="TermEndDatePicker"
                         PropertyChanged="TermEndDatePicker_PropertyChanged"/>
                 </StackLayout>
-
-                <StackLayout VerticalOptions="StartAndExpand">
-                    <Button
-                        x:Name="EditCourseButton" 
-                        Text="CourseName - Edit Course" 
-                        Clicked="EditCourseButton_Clicked"/>
-                </StackLayout>
-                <StackLayout>
-                    <Button 
-                        x:Name="AddCourseButton" 
+            <StackLayout>
+                <ListView x:Name="CourseThisTermListListView" ItemTapped="CourseThisTermListListView_ItemTapped">
+                    <ListView.ItemTemplate >
+                        <DataTemplate>
+                            <ViewCell IsEnabled="True">
+                                <StackLayout>
+                                    <Label Text="{Binding CourseName}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button 
+                        x:Name="AddCourseToTermButton" 
                         Text="Add/ Edit Courses" 
-                        Clicked="AddCourseButton_Clicked"/>
-                </StackLayout>
+                        Clicked="AddCourseToTermButton_Clicked"/>
             </StackLayout>
 
-        </ScrollView>
+        </StackLayout>
+
 
 </ContentPage>

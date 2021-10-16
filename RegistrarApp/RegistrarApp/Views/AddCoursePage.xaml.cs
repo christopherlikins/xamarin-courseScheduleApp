@@ -16,8 +16,14 @@ namespace RegistrarApp.Views
         public AddCoursePage()
         {
             InitializeComponent();
+            LoadPossibleTerms();
         }
 
+        private async void LoadPossibleTerms()
+        {
+            
+            TermPicker.ItemsSource = await App.Database.GetAvailableTerms();
+        }
         private async void SaveCourseButton_Clicked(object sender, EventArgs e)
         {
             SaveTheCourseLable.Text = "Course was saved.";
@@ -26,22 +32,23 @@ namespace RegistrarApp.Views
                 TermID = TermPicker.SelectedIndex,
                 CourseName = CourseNameEntryField.Text,
                 CourseStatus = CourseStatusPicker.SelectedItem.ToString(),
-                CourseStart = DateTime.Parse(CourseStartDatePicker.ToString()),
+                CourseStart = DateTime.Now,
+                //Fix the start and end date assigments.
                 CourseStartToday = false,
-                CourseEnd = DateTime.Parse(CourseEndDatePicker.ToString()),
+                CourseEnd = DateTime.Now,
                 CourseEndToday = false,
                 CourseInstructorName = CourseInstructorNameEntryField.Text,
                 CourseInstructorPhone = CourseInstructorPhoneEntryField.Text,
                 CourseInstructorEmail = CourseInstructorEmailEntryField.Text,
                 PerformanceAssessmentName = PANameEntryField.Text,
-                PerformanceAssessmentStart = DateTime.Parse(PAStartDatePicker.ToString()),
+                PerformanceAssessmentStart = DateTime.Now,
                 PaStartToday = false,
-                PerformanceAssessmentEnd = DateTime.Parse(PAEndDatePicker.ToString()),
+                PerformanceAssessmentEnd = DateTime.Now,
                 PaEndToday = false,
                 ObjectiveAssessmentName = OANameEntryField.Text,
-                ObjectiveAssessmentStart = DateTime.Parse(OAStartDatePicker.ToString()),
+                ObjectiveAssessmentStart = DateTime.Now,
                 OaStartToday = false,
-                ObjectiveAssessmentEnd = DateTime.Parse(OAEndDatePicker.ToString()),
+                ObjectiveAssessmentEnd = DateTime.Now,
                 OaEndToday = false,
                 CourseNotes = CourseNotesEntryField.Text
             };

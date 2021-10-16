@@ -30,6 +30,17 @@ namespace RegistrarApp.Models
         {
             return _database.InsertAsync(term);
         }
+        public Task<List<Course>> GetCoursesThisTerm()
+        {
+             
+            return _database.QueryAsync<Course> ("select * from Course where TermID = ?", Globals.CurrentTerm.TermID);
+        }
+        public Task<List<Term>> GetAvailableTerms()
+        {
+            return _database.Table<Term>().ToListAsync();
+            
+            //return _database.QueryAsync<Term>("SELECT TermName from Term");
+        }
 
     }
 }

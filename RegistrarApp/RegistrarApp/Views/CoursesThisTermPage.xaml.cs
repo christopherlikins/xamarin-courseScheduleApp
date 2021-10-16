@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrarApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,18 +16,11 @@ namespace RegistrarApp.Views
         public CoursesThisTermPage()
         {
             InitializeComponent();
+            LoadCourseList();
         }
-
-        private async void AddCourseButton_Clicked(object sender, EventArgs e)
+        async void LoadCourseList()
         {
-            await Navigation.PushAsync(new CourseListPage());
-            //onclick assign the courseid to populate the edit course page.
-        }
-
-
-        private async void EditCourseButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new EditCoursePage());
+            CourseThisTermListListView.ItemsSource = await App.Database.GetCoursesThisTerm();
         }
 
         private void TermEndDatePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -37,6 +31,18 @@ namespace RegistrarApp.Views
         private void TermStartDatePicker_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
 
+        }
+
+        private async void AddCourseToTermButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CourseListPage());
+            //onclick assign the courseid to populate the edit course page.
+        }
+
+        private async void CourseThisTermListListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Globals.CurrentTerm = (Term)e.Item;
+            await Navigation.PushAsync(new EditCoursePage());
         }
     }
 }

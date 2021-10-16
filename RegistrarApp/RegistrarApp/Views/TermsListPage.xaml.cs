@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrarApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,26 +16,26 @@ namespace RegistrarApp.Views
         public TermsListPage()
         {
             InitializeComponent();
+            LoadTermList();
         }
 
-        private async void TermOneButton_Clicked(object sender, EventArgs e)
+        async void LoadTermList()
         {
-            await Navigation.PushAsync(new CoursesThisTermPage());
-            
+            TermListListView.ItemsSource = await App.Database.GetTermsAsync();
+        }
+        private async void AddTermButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddTermPage());
         }
 
-        private async void TermTwoButton_Clicked(object sender, EventArgs e)
+        private async void RefreshTermsButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CoursesThisTermPage());
+            TermListListView.ItemsSource = await App.Database.GetTermsAsync();
         }
 
-        private async void TermThreeButton_Clicked(object sender, EventArgs e)
+        private async void TermListListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            await Navigation.PushAsync(new CoursesThisTermPage());
-        }
-
-        private async void TermFourButton_Clicked(object sender, EventArgs e)
-        {
+            Globals.CurrentTerm = (Term)e.Item;
             await Navigation.PushAsync(new CoursesThisTermPage());
         }
     }

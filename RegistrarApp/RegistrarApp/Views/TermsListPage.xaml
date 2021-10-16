@@ -6,34 +6,24 @@
              BackgroundColor="DarkBlue"
              Title="Your Assigned Terms">
 
-    <ScrollView>
-            <StackLayout>
-                <!--Edit course and date controls for the First Term-->
-                <Button
-                    x:Name="TermOneButton"
-                    Text="Term 01: Fall - Course List"
-                    Clicked="TermOneButton_Clicked" />
-
-                <!--Edit course and date controls for the Second Term-->
-                <Button
-                    x:Name="TermTwoButton"
-                    Text="Term 02: Spring - Course List"
-                    Clicked="TermTwoButton_Clicked"/>
-
-                <!--Edit course and date controls for the Third Term-->
-                <Button
-                    x:Name="TermThreeButton"
-                    Text="Term 03: Fall - Course List"
-                    Clicked="TermThreeButton_Clicked"/>
-
-                <!--Edit course and date controls for the Fourth Term-->
-                <Button
-                    x:Name="TermFourButton"
-                    Text="Term 04: Spring - Course List"
-                    Clicked="TermFourButton_Clicked"/>
-
-            
-            </StackLayout>
-        </ScrollView>
+    <StackLayout>
+        <Button x:Name="RefreshTermsButton" Text="Refresh" HorizontalOptions="CenterAndExpand" Clicked="RefreshTermsButton_Clicked"/>
+        <StackLayout>
+            <ListView x:Name="TermListListView" ItemTapped="TermListListView_ItemTapped" SelectionMode="Single" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout>
+                                <Label Text="{Binding TermName}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <StackLayout>
+            <Button x:Name="AddTermButton" Text="Create New Term" Clicked="AddTermButton_Clicked"/>
+        </StackLayout>
+    </StackLayout>
 
 </ContentPage>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RegistrarApp.Views.AddTermPage"
+             BackgroundColor="DarkBlue">
+    <ScrollView>
+        <StackLayout>
+            <Grid VerticalOptions="StartAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label 
+                        x:Name="TermNameLabel"
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="Term Name"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        />
+                <Entry
+                        x:Name="TermNameEntryField"
+                        Grid.Column="1"
+                        Grid.Row="2"
+                        Placeholder="Enter Term Name"
+                        MaxLength="20"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"
+                        />
+                
+                <Label
+                        x:Name="TermStartDateLabel"
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        Text="Term Start Date"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        />
+                <DatePicker 
+                        x:Name="TermStartDatePicker"
+                        Grid.Column="1"
+                        Grid.Row="4"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"
+                        />
+                <Label
+                        x:Name="TermEndDateLabel"
+                        Grid.Column="0"
+                        Grid.Row="5"
+                        Text="Term End Date"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"
+                        />
+                <DatePicker 
+                        x:Name="TermEndDatePicker"
+                        Grid.Column="1"
+                        Grid.Row="5"
+                        HorizontalOptions="StartAndExpand"
+                        VerticalOptions="Center"
+                        />
+                
+
+            </Grid>
+            <StackLayout>
+                
+                <Label
+                        x:Name="SaveTheTermLable"
+                        Text="Save the Term?"/>
+                <Button 
+                        x:Name="SaveTermButton"
+                        Text="Save Term"
+                        Clicked="SaveTermButton_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
