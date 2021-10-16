@@ -10,11 +10,13 @@ using Xamarin.Forms.Xaml;
 namespace RegistrarApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+
     public partial class CourseListPage : ContentPage
     {
         public CourseListPage()
         {
             InitializeComponent();
+            
         }
 
         private async void TestCourseButton_Clicked(object sender, EventArgs e)

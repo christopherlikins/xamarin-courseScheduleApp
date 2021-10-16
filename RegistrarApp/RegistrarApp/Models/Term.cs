@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,9 @@ namespace RegistrarApp.Models
 {
     public class Term
     {
+        [PrimaryKey, AutoIncrement]
         public int TermID { get; set; }
+        [Indexed]
         public string TermName { get; set; }
         public DateTime TermStart { get; set; }
         public DateTime TermEnd { get; set; }

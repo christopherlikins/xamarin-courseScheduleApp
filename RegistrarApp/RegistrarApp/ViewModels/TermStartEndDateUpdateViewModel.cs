@@ -38,6 +38,7 @@ namespace RegistrarApp.ViewModels
                     return;
                 DefaultLocalDatePopulate = value;
                 OnPropertyChanged(nameof(SetNewTermStartTime));
+                //Use the current term id to automatically set the new date to the database.
             }
         }
         public DateTime SetNewTermEndTime
@@ -49,6 +50,8 @@ namespace RegistrarApp.ViewModels
                     return;
                 DefaultLocalDatePopulate = value;
                 OnPropertyChanged(nameof(SetNewTermEndTime));
+                //Use the current term id to automatically set the new date to the database.
+
             }
         }
         public ICommand SaveTermStartDate { get; }
