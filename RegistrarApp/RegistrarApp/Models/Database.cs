@@ -14,6 +14,21 @@ namespace RegistrarApp.Models
             _database.CreateTableAsync<Term>();
             _database.CreateTableAsync<Course>();            
         }
+        public async Task<List<Course>> GetCourseNotificationList()
+        {
+            //return _database.QueryAsync<Course>("SELECT * FROM Course WHERE CourseStartToday = true");
+            var query = _database.Table<Course>().Where(s => s.CourseStartToday.Equals(true));
+            var result = await query.ToListAsync();
+            return result;
+        }
+        public Task<int> DeleteAllTermsAsync()
+        {
+            return _database.DeleteAllAsync<Term>();
+        }
+        public Task<int> DeleteAllCoursesAsync()
+        {
+            return _database.DeleteAllAsync<Course>();
+        }
         public Task<List<Term>> GetTermsAsync()
         {
             return _database.Table<Term>().ToListAsync();

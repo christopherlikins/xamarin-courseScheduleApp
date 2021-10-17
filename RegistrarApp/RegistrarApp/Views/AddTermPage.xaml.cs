@@ -25,8 +25,8 @@ namespace RegistrarApp.Views
             {
                 
                 TermName = TermNameEntryField.Text,
-                TermStart = DateTime.Now,
-                TermEnd = DateTime.Now.AddDays(7)
+                TermStart = TermStartDatePicker.Date,
+                TermEnd = TermEndDatePicker.Date
 
         };
             await App.Database.SaveTermAsync(term);

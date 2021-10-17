@@ -7,7 +7,7 @@
 
 
             <StackLayout>
-        <Button x:Name="RefreshClassesButton" Text="Refresh" HorizontalOptions="CenterAndExpand" Clicked="RefreshClassesButton_Clicked"/>
+        
         <StackLayout>   
                     <ListView x:Name="CourseListListView" ItemTapped="CourseListListView_ItemTapped">
                         <ListView.ItemTemplate >

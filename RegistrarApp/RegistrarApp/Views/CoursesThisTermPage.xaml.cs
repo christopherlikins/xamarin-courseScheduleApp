@@ -16,6 +16,12 @@ namespace RegistrarApp.Views
         public CoursesThisTermPage()
         {
             InitializeComponent();
+            
+            
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             LoadCourseList();
             PopulateCourseThisTermFields();
         }

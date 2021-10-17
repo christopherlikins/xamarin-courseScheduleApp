@@ -7,7 +7,7 @@
              Title="Your Assigned Terms">
 
     <StackLayout>
-        <Button x:Name="RefreshTermsButton" Text="Refresh" HorizontalOptions="CenterAndExpand" Clicked="RefreshTermsButton_Clicked"/>
+        
         <StackLayout>
             <ListView x:Name="TermListListView" ItemTapped="TermListListView_ItemTapped" SelectionMode="Single" >
                 <ListView.ItemTemplate>

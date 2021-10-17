@@ -11,18 +11,7 @@
         <Label
             x:Name="CurrentTermTitle"
             Text="Term Name"/>
-        <StackLayout Orientation="Horizontal">
-                    <Label Text="Term Start:"/>
-                    <DatePicker
-                        x:Name="TermStartDatePicker"
-                        PropertyChanged="TermStartDatePicker_PropertyChanged"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="Term Start:"/>
-                    <DatePicker 
-                        x:Name="TermEndDatePicker"
-                        PropertyChanged="TermEndDatePicker_PropertyChanged"/>
-                </StackLayout>
+        
             <StackLayout>
                 <ListView x:Name="CourseThisTermListListView" ItemTapped="CourseThisTermListListView_ItemTapped">
                     <ListView.ItemTemplate >

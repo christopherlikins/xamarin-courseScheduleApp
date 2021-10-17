@@ -32,13 +32,13 @@ namespace RegistrarApp.Views
 
         private async void SaveTermButton_Clicked(object sender, EventArgs e)
         {
-            SavedDeletedTermLabel.Text = "Term Updated. Back and refresh the page.";
+            SavedDeletedTermLabel.Text = "Term Updated.";
             Term term = new Term()
             {
                 TermID = Globals.CurrentTerm.TermID,
                 TermName = TermNameEntryField.Text,
-                TermStart = DateTime.Now,
-                TermEnd = DateTime.Now.AddDays(7)
+                TermStart = TermStartDatePicker.Date,
+                TermEnd = TermEndDatePicker.Date
 
             };
             await App.Database.UpdateTermAsync(term);

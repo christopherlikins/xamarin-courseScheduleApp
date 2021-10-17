@@ -34,25 +34,41 @@ namespace RegistrarApp.Views
                 CourseStatus = CourseStatusPicker.SelectedItem.ToString(),
                 CourseStart = DateTime.Now,
                 //Fix the start and end date assigments.
-                CourseStartToday = false,
-                CourseEnd = DateTime.Now,
-                CourseEndToday = false,
+                CourseStartToday = CourseNotificationSwitch.IsToggled,
+                CourseEnd = CourseStartDatePicker.Date,
+                CourseEndToday = CourseNotificationSwitch.IsToggled,
                 CourseInstructorName = CourseInstructorNameEntryField.Text,
                 CourseInstructorPhone = CourseInstructorPhoneEntryField.Text,
                 CourseInstructorEmail = CourseInstructorEmailEntryField.Text,
                 PerformanceAssessmentName = PANameEntryField.Text,
-                PerformanceAssessmentStart = DateTime.Now,
-                PaStartToday = false,
-                PerformanceAssessmentEnd = DateTime.Now,
-                PaEndToday = false,
+                PerformanceAssessmentStart = PAStartDatePicker.Date,
+                PaStartToday = PANotificationSwitch.IsToggled,
+                PerformanceAssessmentEnd = PAEndDatePicker.Date,
+                PaEndToday = PANotificationSwitch.IsToggled,
                 ObjectiveAssessmentName = OANameEntryField.Text,
-                ObjectiveAssessmentStart = DateTime.Now,
-                OaStartToday = false,
-                ObjectiveAssessmentEnd = DateTime.Now,
-                OaEndToday = false,
-                CourseNotes = CourseNotesEntryField.Text
+                ObjectiveAssessmentStart = OAStartDatePicker.Date,
+                OaStartToday = OANotificationSwitch.IsToggled,
+                ObjectiveAssessmentEnd = OAEndDatePicker.Date,
+                OaEndToday = OANotificationSwitch.IsToggled,
+                CourseNotes = CourseNotesEntryField.Text,
+                
             };
             await App.Database.SaveCourseAsync(course);
+        }
+
+        private void CourseNotificationSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+
+        }
+
+        private void PANotificationSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+
+        }
+
+        private void OANotificationSwitch_Toggled(object sender, ToggledEventArgs e)
+        {
+
         }
     }
 }

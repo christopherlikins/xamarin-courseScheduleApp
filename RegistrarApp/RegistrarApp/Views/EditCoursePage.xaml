@@ -194,7 +194,7 @@
                         x:Name="PAEndDateLabel"
                         Grid.Column="0"
                         Grid.Row="11"
-                        Text="PA Start"
+                        Text="PA End"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
                         />
@@ -226,7 +226,7 @@
                         x:Name="OAStartDateLabel"
                         Grid.Column="0"
                         Grid.Row="13"
-                        Text="PA Start"
+                        Text="OA Start"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
                         />
@@ -241,7 +241,7 @@
                         x:Name="OAEndDateLabel"
                         Grid.Column="0"
                         Grid.Row="14"
-                        Text="OA Start"
+                        Text="OA End"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
                         />
@@ -252,8 +252,53 @@
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
+                <Label
+                        x:Name="CourseNotificationSwitchLabel"
+                        Grid.Column="0"
+                        Grid.Row="15"
+                        Text="Course Notifications"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"/>
+                <Switch
+                        x:Name="CourseNotificationSwitch"
+                        IsToggled="False"
+                        Toggled="CourseNotificationSwitch_Toggled"
+                        Grid.Column="2"
+                        Grid.Row="15"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"/>
+                <Label
+                        x:Name="PANotificationSwitchLabel"
+                        Grid.Column="0"
+                        Grid.Row="16"
+                        Text="PA Notifications"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"/>
+                <Switch
+                        x:Name="PANotificationSwitch"
+                        IsToggled="False"
+                        Toggled="PANotificationSwitch_Toggled"
+                        Grid.Column="2"
+                        Grid.Row="16"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"/>
+                <Label
+                        x:Name="OANotificationSwitchLabel"
+                        Grid.Column="0"
+                        Grid.Row="17"
+                        Text="OA Notifications"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="Center"/>
+                <Switch
+                        x:Name="OANotificationSwitch"
+                        
+                        Toggled="OANotificationSwitch_Toggled"
+                        Grid.Column="2"
+                        Grid.Row="17"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="Center"/>
 
-                </Grid>
+            </Grid>
                 <StackLayout>
                     <!--COURSE NOTES SECTION-->
                     <Label 

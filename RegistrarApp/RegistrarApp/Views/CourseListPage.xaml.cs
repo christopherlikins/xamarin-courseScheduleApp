@@ -17,8 +17,13 @@ namespace RegistrarApp.Views
         public CourseListPage()
         {
             InitializeComponent();
-            LoadCourseList();
             
+            
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            LoadCourseList();
         }
         async void LoadCourseList()
         {
@@ -30,10 +35,7 @@ namespace RegistrarApp.Views
             await Navigation.PushAsync(new AddCoursePage());
         }
 
-        private async void RefreshClassesButton_Clicked(object sender, EventArgs e)
-        {
-            CourseListListView.ItemsSource = await App.Database.GetCoursesAsync();
-        }
+
 
         private async void CourseListListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {

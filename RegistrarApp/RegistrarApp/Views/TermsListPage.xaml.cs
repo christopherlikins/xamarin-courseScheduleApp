@@ -16,6 +16,11 @@ namespace RegistrarApp.Views
         public TermsListPage()
         {
             InitializeComponent();
+            
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             LoadTermList();
         }
 

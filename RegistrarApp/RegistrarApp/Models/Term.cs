@@ -13,12 +13,17 @@ namespace RegistrarApp.Models
         public string TermName { get; set; }
         public DateTime TermStart { get; set; }
         public DateTime TermEnd { get; set; }
-        public Term (int termId, string termName, DateTime termStart, DateTime termEnd)
+        public bool TermStartToday { get; set; }
+        public bool TermEndToday { get; set; }
+        public Term (int termId, string termName, DateTime termStart, DateTime termEnd, bool termStartToday, bool termEndToday)
         {
             TermID = termId;
             TermName = termName;
             TermStart = termStart;
             TermEnd = termEnd;
+            TermStartToday = termStartToday;
+            TermEndToday = termEndToday;
+
         }
         public Term ()
         {
