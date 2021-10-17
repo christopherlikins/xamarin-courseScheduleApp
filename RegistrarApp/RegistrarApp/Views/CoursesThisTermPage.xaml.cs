@@ -17,6 +17,11 @@ namespace RegistrarApp.Views
         {
             InitializeComponent();
             LoadCourseList();
+            PopulateCourseThisTermFields();
+        }
+        private void PopulateCourseThisTermFields()
+        {
+            CurrentTermTitle.Text = Globals.CurrentTerm.TermName;
         }
         async void LoadCourseList()
         {
@@ -41,7 +46,7 @@ namespace RegistrarApp.Views
 
         private async void CourseThisTermListListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            Globals.CurrentTerm = (Term)e.Item;
+            Globals.CurrentCourse = (Course)e.Item;
             await Navigation.PushAsync(new EditCoursePage());
         }
     }

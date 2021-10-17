@@ -32,6 +32,7 @@
     <TabBar>
         <ShellContent Title="HOME" Icon="icon_about.png" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" />
         <ShellContent Title="TERMS" Icon="icon_about.png" Route="TermsListPage" ContentTemplate="{DataTemplate local:TermsListPage}" />
+        <ShellContent Title="COURSES" Icon="icon_about.png" Route="CourseListPage" ContentTemplate="{DataTemplate local:CourseListPage}" />
     </TabBar>
 
     <!--

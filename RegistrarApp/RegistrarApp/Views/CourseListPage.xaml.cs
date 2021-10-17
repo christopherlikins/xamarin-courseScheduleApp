@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegistrarApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,12 @@ namespace RegistrarApp.Views
         private async void RefreshClassesButton_Clicked(object sender, EventArgs e)
         {
             CourseListListView.ItemsSource = await App.Database.GetCoursesAsync();
+        }
+
+        private async void CourseListListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Globals.CurrentCourse = (Course)e.Item;
+            await Navigation.PushAsync(new EditCoursePage());
         }
     }
 }

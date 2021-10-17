@@ -36,7 +36,7 @@ namespace RegistrarApp.Views
         private async void TermListListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             Globals.CurrentTerm = (Term)e.Item;
-            await Navigation.PushAsync(new CoursesThisTermPage());
+            await Navigation.PushAsync(new EditTermPage());
         }
     }
 }

@@ -8,7 +8,10 @@
 
 
             <StackLayout>
-                <StackLayout Orientation="Horizontal">
+        <Label
+            x:Name="CurrentTermTitle"
+            Text="Term Name"/>
+        <StackLayout Orientation="Horizontal">
                     <Label Text="Term Start:"/>
                     <DatePicker
                         x:Name="TermStartDatePicker"
