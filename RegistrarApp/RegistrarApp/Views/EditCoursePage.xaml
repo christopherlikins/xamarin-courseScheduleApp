@@ -30,13 +30,9 @@
                         Title="Assign/Unassign Term"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center">
-                        <Picker.Items>
-                            <x:String>Unassigned</x:String>
-                            <x:String>Term One: Fall</x:String>
-                            <x:String>Term Two: Spring</x:String>
-                            <x:String>Term Three: Fall</x:String>
-                            <x:String>Term Four: Spring</x:String>
-                        </Picker.Items>
+                    <Picker.Items>
+                        <x:String>Unassigned</x:String>
+                    </Picker.Items>
                     </Picker>
                     <Label 
                         x:Name="CourseNameLabel"
@@ -138,7 +134,7 @@
                         x:Name="CourseInstructorPhoneEntryField"
                         Grid.Column="1"
                         Grid.Row="7"
-                        Placeholder="555-555-5555"
+                        Placeholder="5555555555"
                         MaxLength="11"
                         Keyboard="Telephone"
                         HorizontalOptions="StartAndExpand"
@@ -278,7 +274,8 @@
                         VerticalOptions="Center"
                         />
                     <Label
-                        Text="{Binding DeletedAddedDisplay}"/>
+                        x:Name="CourseSavedOrDeleted"
+                        Text=""/>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Button 
                             x:Name="SaveButton"

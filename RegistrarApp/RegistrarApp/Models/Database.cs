@@ -26,24 +26,36 @@ namespace RegistrarApp.Models
         {
             return _database.InsertAsync(course);
         }
+        public Task<int> DeleteCourseAsync()
+        {
+            return _database.Table<Course>().DeleteAsync(v => v.CourseID.Equals(Globals.CurrentCourse.CourseID));
+        }
         public Task<int> SaveTermAsync (Term term)
         {
             return _database.InsertAsync(term);
         }
+        public Task<int> DeleteTermAsync()
+        {
+            return _database.Table<Term>().DeleteAsync(v => v.TermID.Equals(Globals.CurrentTerm.TermID));
+        }
         public async Task<List<Course>> GetCoursesThisTerm()
         {
-            var query = _database.Table<Course>().Where(s => s.CourseName.StartsWith("S"));
-
+            //var query = _database.Table<Course>().Where(s => s.CourseName.StartsWith("S"));
+            var query = _database.Table<Course>().Where(s => s.TermID.Equals(Globals.CurrentTerm.TermID));
             var result = await query.ToListAsync();
             return result;
-            //_database.Table<Course>().Where(v => v.TermID.CompareTo(Globals.CurrentTerm.TermID));
-            //return _database.QueryAsync<Course> ("select * from Course where TermID = ?", Globals.CurrentTerm.TermID);
+        }
+        public async Task<int> UpdateTermAsync (Term term)
+        {
+            return await _database.UpdateAsync(term);
+        }
+        public async Task<int> UpdateCourseAsync (Course course)
+        {
+            return await _database.UpdateAsync(course);
         }
         public Task<List<Term>> GetAvailableTerms()
         {
             return _database.Table<Term>().ToListAsync();
-            
-            //return _database.QueryAsync<Term>("SELECT TermName from Term");
         }
 
     }

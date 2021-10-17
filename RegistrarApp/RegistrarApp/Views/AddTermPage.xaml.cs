@@ -23,6 +23,7 @@ namespace RegistrarApp.Views
             SaveTheTermLable.Text = "Term Saved";
             Term term = new Term()
             {
+                
                 TermName = TermNameEntryField.Text,
                 TermStart = DateTime.Now,
                 TermEnd = DateTime.Now.AddDays(7)

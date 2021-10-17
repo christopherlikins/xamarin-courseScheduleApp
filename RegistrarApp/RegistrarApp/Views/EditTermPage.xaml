@@ -66,8 +66,8 @@
             <StackLayout>
                 <StackLayout Orientation="Horizontal">
                       <Label
-                        x:Name="SaveTheTermLable"
-                        Text="Save the Term?"/>
+                        x:Name="SavedDeletedTermLabel"
+                        Text=""/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Button 
@@ -78,6 +78,10 @@
                         x:Name="EditTermCoursesButton"
                         Text="Edit Term Courses"
                         Clicked="EditTermCoursesButton_Clicked"/>
+                    <Button
+                        x:Name="DeleteTermButton"
+                        Text="Delete this Term"
+                        Clicked="DeleteTermButton_Clicked"/>
                 </StackLayout>
 
 

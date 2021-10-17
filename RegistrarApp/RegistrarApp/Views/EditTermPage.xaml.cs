@@ -21,6 +21,8 @@ namespace RegistrarApp.Views
         private void PopulateEditTermFrom()
         {
             TermNameEntryField.Text = Globals.CurrentTerm.TermName;
+            TermStartDatePicker.Date = Globals.CurrentTerm.TermStart;
+            TermEndDatePicker.Date = Globals.CurrentTerm.TermEnd;
         }
 
         private async void EditTermCoursesButton_Clicked(object sender, EventArgs e)
@@ -28,9 +30,25 @@ namespace RegistrarApp.Views
             await Navigation.PushAsync(new CoursesThisTermPage());
         }
 
-        private void SaveTermButton_Clicked(object sender, EventArgs e)
+        private async void SaveTermButton_Clicked(object sender, EventArgs e)
         {
+            SavedDeletedTermLabel.Text = "Term Updated. Back and refresh the page.";
+            Term term = new Term()
+            {
+                TermID = Globals.CurrentTerm.TermID,
+                TermName = TermNameEntryField.Text,
+                TermStart = DateTime.Now,
+                TermEnd = DateTime.Now.AddDays(7)
 
+            };
+            await App.Database.UpdateTermAsync(term);
+        }
+
+        private async void DeleteTermButton_Clicked(object sender, EventArgs e)
+        {
+            SavedDeletedTermLabel.Text = "Term Deleted. Go back and refresh the list.";
+            TermNameEntryField.Text = string.Empty;
+            await App.Database.DeleteTermAsync();
         }
     }
 }
