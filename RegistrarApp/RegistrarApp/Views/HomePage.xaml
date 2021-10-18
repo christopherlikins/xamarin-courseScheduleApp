@@ -8,7 +8,7 @@
         <StackLayout>
             <Button x:Name="PopDatabaseButton" Text="Reset Database to Defaults" HorizontalOptions="CenterAndExpand" Clicked="PopDatabaseButton_Clicked"/>
             
-            <Label Text="Welcome to your Future!"
+            <Label Text="Welcome to your Future! Study in Sisyphus is taught by Chris Likins."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

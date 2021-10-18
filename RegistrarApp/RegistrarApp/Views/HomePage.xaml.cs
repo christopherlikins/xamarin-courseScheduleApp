@@ -41,7 +41,7 @@ namespace RegistrarApp.Views
                 if (CourseDate == NowDate && CourseNotificationCheck[i].CourseStartToday == true)
                 {
 
-                    CrossLocalNotifications.Current.Show("Your Course " + CourseNotificationCheck[i].CourseName.ToString() + " starts today!", "Good Luck");
+                    CrossLocalNotifications.Current.Show("Your Course " + CourseNotificationCheck[i].CourseName.ToString() + " with " + CourseNotificationCheck[i].CourseInstructorName.ToString() + " starts today!", "Good Luck");
                 }
             }
         }
