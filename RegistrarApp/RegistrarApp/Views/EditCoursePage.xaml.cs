@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -166,6 +167,15 @@ namespace RegistrarApp.Views
                 await DisplayAlert("Term is Full", "This Term already has six Courses. Please assign this course to another term. Thank you" + CoursesInThisTerm, "OK");
             }
             
+        }
+
+        private async void ShareNotesButton_Clicked(object sender, EventArgs e)
+        {
+            await Share.RequestAsync(new ShareTextRequest
+            {
+                Text = CourseNotesEntryField.Text,
+                Title = "My Course Notes"
+            });
         }
     }
 }

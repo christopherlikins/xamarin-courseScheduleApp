@@ -320,6 +320,11 @@
                             Clicked="DeleteCourseButton_Clicked"
                             HorizontalOptions="EndAndExpand"
                             BackgroundColor="Red"/>
+                        <Button
+                            x:Name="ShareNotesButton"
+                            Text="Share Course Note"
+                            Clicked="ShareNotesButton_Clicked"
+                            BackgroundColor="Green"/>
                     </StackLayout>
 
                 </StackLayout>
