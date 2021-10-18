@@ -32,16 +32,27 @@ namespace RegistrarApp.Views
 
         private async void SaveTermButton_Clicked(object sender, EventArgs e)
         {
-            SavedDeletedTermLabel.Text = "Term Updated.";
-            Term term = new Term()
-            {
-                TermID = Globals.CurrentTerm.TermID,
-                TermName = TermNameEntryField.Text,
-                TermStart = TermStartDatePicker.Date,
-                TermEnd = TermEndDatePicker.Date
 
-            };
-            await App.Database.UpdateTermAsync(term);
+            DateTime Start = TermStartDatePicker.Date;
+            DateTime End = TermEndDatePicker.Date;
+            int result = DateTime.Compare(Start, End);
+            if (string.IsNullOrWhiteSpace(TermNameEntryField.Text) || result > 0)
+            {
+                await DisplayAlert("Check data fields", "Please ensure a name is entered for this term, and that the term end date comes after the start date. Thank you.", "OK");
+            }
+            else
+            {
+                SavedDeletedTermLabel.Text = "Term Updated.";
+                Term term = new Term()
+                {
+                    TermID = Globals.CurrentTerm.TermID,
+                    TermName = TermNameEntryField.Text,
+                    TermStart = TermStartDatePicker.Date,
+                    TermEnd = TermEndDatePicker.Date
+
+                };
+                await App.Database.UpdateTermAsync(term);
+            }
         }
 
         private async void DeleteTermButton_Clicked(object sender, EventArgs e)

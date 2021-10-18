@@ -9,12 +9,17 @@
     <StackLayout>
         
         <StackLayout>
+            <Label Text="Tap a Term to edit its elements or assign courses." FontSize="Medium"/>
+            
             <ListView x:Name="TermListListView" ItemTapped="TermListListView_ItemTapped" SelectionMode="Single" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell IsEnabled="True">
-                            <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Term Name:"/>
                                 <Label Text="{Binding TermName}"/>
+                                <Label Text="TermID ="/>
+                                <Label Text="{Binding TermID}"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

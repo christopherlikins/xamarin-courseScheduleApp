@@ -6,9 +6,11 @@
 
              BackgroundColor="DarkBlue"
              Title="Add Course">
-
-        <ScrollView>
+    <StackLayout>
+    
+    <ScrollView>
             <StackLayout>
+                
                 <Grid VerticalOptions="StartAndExpand">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -18,34 +20,14 @@
                         <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
 
-                
-                <Label
-                        x:Name="TermAssignmentLabel"
-                        Grid.Column="0"
-                        Grid.Row="1"
-                        Text="Assigned to Term"
-                        HorizontalOptions="EndAndExpand"
-                        VerticalOptions="Center"
-                        />
-                    <Picker
-                        Grid.Column="1"
-                        Grid.Row="1"
-                        x:Name="TermPicker"
-                        Title="Assign/Unassign Term"
-                        HorizontalOptions="StartAndExpand"
-                        VerticalOptions="Center">
-                        <Picker.Items>
-                            <x:String>Unassigned</x:String>
-                            <x:String>Term One: Fall</x:String>
-                            <x:String>Term Two: Spring</x:String>
-                            <x:String>Term Three: Fall</x:String>
-                            <x:String>Term Four: Spring</x:String>
-                        </Picker.Items>
-                    </Picker>
+
+                    <Label x:Name="ScrollMessage" Text="Scroll to the bottom to fill out and save this entry."
+                           Grid.ColumnSpan="2"
+                           Grid.Row="0"/>
                     <Label 
                         x:Name="CourseNameLabel"
                         Grid.Column="0"
-                        Grid.Row="2"
+                        Grid.Row="1"
                         Text="Course Name"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -53,7 +35,7 @@
                     <Entry
                         x:Name="CourseNameEntryField"
                         Grid.Column="1"
-                        Grid.Row="2"
+                        Grid.Row="1"
                         Placeholder="Enter Course Name"
                         MaxLength="20"
                         HorizontalOptions="StartAndExpand"
@@ -62,14 +44,14 @@
                     <Label
                         x:Name="CourseStatusLabel"
                         Grid.Column="0"
-                        Grid.Row="3"
+                        Grid.Row="2"
                         Text="Course Status"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
                         />
                     <Picker
                         Grid.Column="1"
-                        Grid.Row="3"
+                        Grid.Row="2"
                         x:Name="CourseStatusPicker"
                         Title="Assign/Unassign Status"
                         HorizontalOptions="StartAndExpand"
@@ -85,7 +67,7 @@
                     <Label
                         x:Name="CourseStartDateLabel"
                         Grid.Column="0"
-                        Grid.Row="4"
+                        Grid.Row="3"
                         Text="Course Start Date"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -93,14 +75,14 @@
                     <DatePicker 
                         x:Name="CourseStartDatePicker"
                         Grid.Column="1"
-                        Grid.Row="4"
+                        Grid.Row="3"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
                     <Label
                         x:Name="CourseEndDateLabel"
                         Grid.Column="0"
-                        Grid.Row="5"
+                        Grid.Row="4"
                         Text="Course End Date"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -108,7 +90,7 @@
                     <DatePicker 
                         x:Name="CourseEndDatePicker"
                         Grid.Column="1"
-                        Grid.Row="5"
+                        Grid.Row="4"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
@@ -116,7 +98,7 @@
                     <Label 
                         x:Name="CourseInstructorNameLabel"
                         Grid.Column="0"
-                        Grid.Row="6"
+                        Grid.Row="5"
                         Text="Course Instructor Name"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -124,7 +106,7 @@
                     <Entry
                         x:Name="CourseInstructorNameEntryField"
                         Grid.Column="1"
-                        Grid.Row="6"
+                        Grid.Row="5"
                         Placeholder="Enter CI name"
                         MaxLength="20"
                         HorizontalOptions="StartAndExpand"
@@ -133,7 +115,7 @@
                     <Label 
                         x:Name="CourseInstructorPhoneLabel"
                         Grid.Column="0"
-                        Grid.Row="7"
+                        Grid.Row="6"
                         Text="Course Instructor Phone"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -141,7 +123,7 @@
                     <Entry
                         x:Name="CourseInstructorPhoneEntryField"
                         Grid.Column="1"
-                        Grid.Row="7"
+                        Grid.Row="6"
                         Placeholder="555-555-5555"
                         MaxLength="11"
                         Keyboard="Telephone"
@@ -151,7 +133,7 @@
                     <Label 
                         x:Name="CourseInstructorEmailLabel"
                         Grid.Column="0"
-                        Grid.Row="8"
+                        Grid.Row="7"
                         Text="Course Instructor Email"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -159,7 +141,7 @@
                     <Entry
                         x:Name="CourseInstructorEmailEntryField"
                         Grid.Column="1"
-                        Grid.Row="8"
+                        Grid.Row="7"
                         Placeholder="Enter CI Email"
                         HorizontalOptions="StartAndExpand"
                         Keyboard="Email"
@@ -169,7 +151,7 @@
                     <Label 
                         x:Name="PANameLabel"
                         Grid.Column="0"
-                        Grid.Row="9"
+                        Grid.Row="8"
                         Text="PA Name"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -177,7 +159,7 @@
                     <Entry
                         x:Name="PANameEntryField"
                         Grid.Column="1"
-                        Grid.Row="9"
+                        Grid.Row="8"
                         Placeholder="Enter PA Name"
                            MaxLength="20"
                         HorizontalOptions="StartAndExpand"
@@ -186,7 +168,7 @@
                     <Label
                         x:Name="PAStartDateLabel"
                         Grid.Column="0"
-                        Grid.Row="10"
+                        Grid.Row="9"
                         Text="PA Start"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -194,14 +176,14 @@
                     <DatePicker 
                         x:Name="PAStartDatePicker"
                         Grid.Column="1"
-                        Grid.Row="10"
+                        Grid.Row="9"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
                     <Label
                         x:Name="PAEndDateLabel"
                         Grid.Column="0"
-                        Grid.Row="11"
+                        Grid.Row="10"
                         Text="PA Start"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -209,7 +191,7 @@
                     <DatePicker 
                         x:Name="PAEndDatePicker"
                         Grid.Column="1"
-                        Grid.Row="11"
+                        Grid.Row="10"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
@@ -217,7 +199,7 @@
                     <Label 
                         x:Name="OANameLabel"
                         Grid.Column="0"
-                        Grid.Row="12"
+                        Grid.Row="11"
                         Text="OA Name"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -225,7 +207,7 @@
                     <Entry
                         x:Name="OANameEntryField"
                         Grid.Column="1"
-                        Grid.Row="12"
+                        Grid.Row="11"
                         Placeholder="Enter OA Name"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
@@ -233,7 +215,7 @@
                     <Label
                         x:Name="OAStartDateLabel"
                         Grid.Column="0"
-                        Grid.Row="13"
+                        Grid.Row="12"
                         Text="PA Start"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -241,14 +223,14 @@
                     <DatePicker 
                         x:Name="OAStartDatePicker"
                         Grid.Column="1"
-                        Grid.Row="13"
+                        Grid.Row="12"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
                     <Label
                         x:Name="OAEndDateLabel"
                         Grid.Column="0"
-                        Grid.Row="14"
+                        Grid.Row="13"
                         Text="OA Start"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"
@@ -256,14 +238,14 @@
                     <DatePicker 
                         x:Name="OAEndDatePicker"
                         Grid.Column="1"
-                        Grid.Row="14"
+                        Grid.Row="13"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"
                         />
                 <Label
                         x:Name="CourseNotificationSwitchLabel"
                         Grid.Column="0"
-                        Grid.Row="15"
+                        Grid.Row="14"
                         Text="Course Notifications"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"/>
@@ -272,13 +254,13 @@
                         IsToggled="False"
                         Toggled="CourseNotificationSwitch_Toggled"
                         Grid.Column="2"
-                        Grid.Row="15"
+                        Grid.Row="14"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
                 <Label
                         x:Name="PANotificationSwitchLabel"
                         Grid.Column="0"
-                        Grid.Row="16"
+                        Grid.Row="15"
                         Text="PA Notifications"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"/>
@@ -287,13 +269,13 @@
                         IsToggled="False"
                         Toggled="PANotificationSwitch_Toggled"
                         Grid.Column="2"
-                        Grid.Row="16"
+                        Grid.Row="15"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
                 <Label
                         x:Name="OANotificationSwitchLabel"
                         Grid.Column="0"
-                        Grid.Row="17"
+                        Grid.Row="16"
                         Text="OA Notifications"
                         HorizontalOptions="EndAndExpand"
                         VerticalOptions="Center"/>
@@ -302,7 +284,7 @@
                         IsToggled="False"
                         Toggled="OANotificationSwitch_Toggled"
                         Grid.Column="2"
-                        Grid.Row="17"
+                        Grid.Row="16"
                         HorizontalOptions="StartAndExpand"
                         VerticalOptions="Center"/>
 
@@ -336,4 +318,23 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
+        <StackLayout>
+            <Button x:Name="UnnassignTermButton" Text="Unassign class from term" Clicked="UnnassignTermButton_Clicked"/>
+            <Label x:Name="CourseAssignedToTermLabel" Text="Assign this class to a term by tapping a term below."/>
+            <ListView x:Name="TermsToAssignListListView" ItemTapped="TermsToAssignListListView_ItemTapped"  SelectionMode="Single">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell IsEnabled="True">
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Term Name:"/>
+                                <Label Text="{Binding TermName}"/>
+                                <Label Text="Term ID:"/>
+                                <Label Text="{Binding TermID}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

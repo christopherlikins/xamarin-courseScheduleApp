@@ -123,6 +123,7 @@ namespace RegistrarApp.Views
             await App.Database.DeleteAllCoursesAsync();
             Term term = new Term()
             {
+                TermID = 0,
                 TermName = "Term 01",
                 TermStart = new DateTime(2022, 01, 05),
                 TermEnd = new DateTime(2022, 06, 20),
@@ -132,6 +133,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveTermAsync(term);
             Term term2 = new Term()
             {
+                TermID = 1,
                 TermName = "Term 02",
                 TermStart = new DateTime(2022, 01, 05),
                 TermEnd = new DateTime(2022, 06, 20),
@@ -141,6 +143,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveTermAsync(term2);
             Term term3 = new Term()
             {
+                TermID = 2,
                 TermName = "Term 03",
                 TermStart = new DateTime(2022, 08, 31),
                 TermEnd = new DateTime(2022, 12, 15),
@@ -150,6 +153,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveTermAsync(term3);
             Term term4 = new Term()
             {
+                TermID = 3,
                 TermName = "Term 04",
                 TermStart = new DateTime(2023, 01, 05),
                 TermEnd = new DateTime(2023, 06, 20),
@@ -159,7 +163,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveTermAsync(term4);
             Course course = new Course()
             {
-                TermID = 0,
+                TermID = 47,
                 CourseName = "SQL 101",
                 CourseStatus = "Completed",
                 CourseStart = new DateTime(2021, 08, 31),
@@ -184,7 +188,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveCourseAsync(course);
             Course course2 = new Course()
             {
-                TermID = 1,
+                TermID = 47,
                 CourseName = "C# 101",
                 CourseStatus = "Completed",
                 CourseStart = new DateTime(2021, 08, 31),
@@ -209,7 +213,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveCourseAsync(course2);
             Course course3 = new Course()
             {
-                TermID = 2,
+                TermID = 47,
                 CourseName = "Xamarin 101",
                 CourseStatus = "In Progress",
                 CourseStart = new DateTime(2021, 08, 31),
@@ -234,7 +238,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveCourseAsync(course3);
             Course course4 = new Course()
             {
-                TermID = 3,
+                TermID = 47,
                 CourseName = "Ethics of Code",
                 CourseStatus = "In Progress",
                 CourseStart = new DateTime(2021, 08, 31),
@@ -259,7 +263,7 @@ namespace RegistrarApp.Views
             await App.Database.SaveCourseAsync(course4);
             Course course5 = new Course()
             {
-                TermID = 0,
+                TermID = 47,
                 CourseName = "Study in Sisyphus",
                 CourseStatus = "In Progress",
                 CourseStart = DateTime.Now,
@@ -282,6 +286,56 @@ namespace RegistrarApp.Views
                 CourseNotes = "This is a note"
             };
             await App.Database.SaveCourseAsync(course5);
+            Course course6 = new Course()
+            {
+                TermID = 48,
+                CourseName = "Philosophy of Science",
+                CourseStatus = "In Progress",
+                CourseStart = DateTime.Now,
+                CourseEnd = DateTime.Now.AddDays(7),
+                CourseStartToday = true,
+                CourseEndToday = false,
+                CourseInstructorName = "Stuart Hall",
+                CourseInstructorPhone = "3334445555",
+                CourseInstructorEmail = "email@Domain.com",
+                PerformanceAssessmentName = "Philosophy of Science PA",
+                PerformanceAssessmentStart = new DateTime(2021, 12, 15),
+                PerformanceAssessmentEnd = new DateTime(2021, 12, 15),
+                PaStartToday = false,
+                PaEndToday = false,
+                ObjectiveAssessmentName = "Philosophy of Science OA",
+                ObjectiveAssessmentStart = new DateTime(2021, 12, 15),
+                ObjectiveAssessmentEnd = new DateTime(2021, 12, 15),
+                OaStartToday = false,
+                OaEndToday = false,
+                CourseNotes = "This is a note"
+            };
+            await App.Database.SaveCourseAsync(course6);
+            Course course7 = new Course()
+            {
+                TermID = 48,
+                CourseName = "Historical Writing",
+                CourseStatus = "In Progress",
+                CourseStart = DateTime.Now,
+                CourseEnd = DateTime.Now.AddDays(7),
+                CourseStartToday = true,
+                CourseEndToday = false,
+                CourseInstructorName = "Sophie Bosede Oluwole",
+                CourseInstructorPhone = "3334445555",
+                CourseInstructorEmail = "email@Domain.com",
+                PerformanceAssessmentName = "Historical Writing PA",
+                PerformanceAssessmentStart = new DateTime(2021, 12, 15),
+                PerformanceAssessmentEnd = new DateTime(2021, 12, 15),
+                PaStartToday = false,
+                PaEndToday = false,
+                ObjectiveAssessmentName = "Historical Writing OA",
+                ObjectiveAssessmentStart = new DateTime(2021, 12, 15),
+                ObjectiveAssessmentEnd = new DateTime(2021, 12, 15),
+                OaStartToday = false,
+                OaEndToday = false,
+                CourseNotes = "This is a note"
+            };
+            await App.Database.SaveCourseAsync(course7);
         }
     }
 //    Term = new ObservableCollection<Term>();

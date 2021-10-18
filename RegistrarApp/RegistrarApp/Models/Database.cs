@@ -21,6 +21,10 @@ namespace RegistrarApp.Models
             var result = await query.ToListAsync();
             return result;
         }
+        public Task<int> CheckNumberOfCourses()
+        {
+            return _database.Table<Course>().CountAsync(v => v.TermID.Equals(Globals.TermIDToCourseCount));
+        }
         public Task<int> DeleteAllTermsAsync()
         {
             return _database.DeleteAllAsync<Term>();
@@ -52,6 +56,12 @@ namespace RegistrarApp.Models
         public Task<int> DeleteTermAsync()
         {
             return _database.Table<Term>().DeleteAsync(v => v.TermID.Equals(Globals.CurrentTerm.TermID));
+        }
+        public async Task<List<Course>> GetCoursesAssignedThisTerm()
+        {
+            var query = _database.Table<Course>().Where(s => s.TermID.Equals(Globals.TermAssignedToCourse.TermID));
+            var result = await query.ToListAsync();
+            return result;
         }
         public async Task<List<Course>> GetCoursesThisTerm()
         {

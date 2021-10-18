@@ -20,16 +20,27 @@ namespace RegistrarApp.Views
 
         private async void SaveTermButton_Clicked(object sender, EventArgs e)
         {
-            SaveTheTermLable.Text = "Term Saved";
-            Term term = new Term()
+            DateTime Start = TermStartDatePicker.Date;
+            DateTime End = TermEndDatePicker.Date;
+            int result = DateTime.Compare(Start, End);
+            if (string.IsNullOrWhiteSpace(TermNameEntryField.Text) || result > 0 )
             {
-                
-                TermName = TermNameEntryField.Text,
-                TermStart = TermStartDatePicker.Date,
-                TermEnd = TermEndDatePicker.Date
+                await DisplayAlert("Check data fields", "Please ensure a name is entered for this term, and that the term end date comes after the start date. Thank you.", "OK");
+            }
+            else
+            {
+                SaveTheTermLable.Text = "Term Saved";
+                Term term = new Term()
+                {
 
-        };
-            await App.Database.SaveTermAsync(term);
+                    TermName = TermNameEntryField.Text,
+                    TermStart = TermStartDatePicker.Date,
+                    TermEnd = TermEndDatePicker.Date
+
+                };
+                await App.Database.SaveTermAsync(term);
+            }
+            
 
         }
     }

@@ -13,8 +13,14 @@
                         <ListView.ItemTemplate >
                             <DataTemplate>
                         <ViewCell IsEnabled="True">
-                            <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                
                             <Label Text="{Binding CourseName}"/>
+                                <Label Text="------>"/>
+                                <Label Text="TermID:"/>
+                                    <Label Text="{Binding TermID}"/>
+                                    
+                                
                             </StackLayout>
                         </ViewCell>
                             </DataTemplate>
