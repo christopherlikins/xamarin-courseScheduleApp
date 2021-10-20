@@ -70,11 +70,14 @@ namespace RegistrarApp.Views
             DateTime OAStart = CourseStartDatePicker.Date;
             DateTime OAEnd = CourseEndDatePicker.Date;
             int OADateResult = DateTime.Compare(OAStart, OAEnd);
+            string CourseStatusToString = CourseStatusPicker.SelectedItem.ToString();
+            string CourseStartDate = CourseStartDatePicker.Date.ToString();
             
 
             if (string.IsNullOrWhiteSpace(CourseNameEntryField.Text) ||
                 string.IsNullOrWhiteSpace(CourseInstructorNameEntryField.Text) ||
                 string.IsNullOrWhiteSpace(CourseInstructorEmailEntryField.Text) ||
+                string.IsNullOrWhiteSpace(CourseInstructorPhoneEntryField.Text) ||
                 
                 CourseDateResult > 0 || PADateResult > 0 || OADateResult > 0)
             {
@@ -84,32 +87,48 @@ namespace RegistrarApp.Views
             else
             {
                 CourseSavedOrDeleted.Text = "Course record updated";
-                Course course = new Course()
+                try
                 {
-                    CourseID = Globals.CurrentCourse.CourseID,
-                    TermID = Globals.TermAssignedToCourse.TermID,
-                    CourseName = CourseNameEntryField.Text,
-                    CourseStatus = CourseStatusPicker.SelectedItem.ToString(),
-                    CourseStart = CourseStartDatePicker.Date,                    
-                    CourseStartToday = CourseNotificationSwitch.IsToggled,
-                    CourseEnd = CourseEndDatePicker.Date,
-                    CourseEndToday = CourseNotificationSwitch.IsToggled,
-                    CourseInstructorName = CourseInstructorNameEntryField.Text,
-                    CourseInstructorPhone = CourseInstructorPhoneEntryField.Text,
-                    CourseInstructorEmail = CourseInstructorEmailEntryField.Text,
-                    PerformanceAssessmentName = PANameEntryField.Text,
-                    PerformanceAssessmentStart = PAStartDatePicker.Date,
-                    PaStartToday = PANotificationSwitch.IsToggled,
-                    PerformanceAssessmentEnd = PAEndDatePicker.Date,
-                    PaEndToday = PANotificationSwitch.IsToggled,
-                    ObjectiveAssessmentName = OANameEntryField.Text,
-                    ObjectiveAssessmentStart = OAStartDatePicker.Date,
-                    OaStartToday = OANotificationSwitch.IsToggled,
-                    ObjectiveAssessmentEnd = OAEndDatePicker.Date,
-                    OaEndToday = OANotificationSwitch.IsToggled,
-                    CourseNotes = CourseNotesEntryField.Text
-                };
-                await App.Database.UpdateCourseAsync(course);
+                    Globals.CourseToSave = new Course()
+                    {
+                        CourseID = Globals.CurrentCourse.CourseID,
+                        TermID = Globals.TermAssignedToCourse.TermID,
+                        CourseName = CourseNameEntryField.Text,
+                        CourseStatus = CourseStatusToString,
+                        CourseStart = CourseStartDatePicker.Date,
+                        CourseStartToday = CourseNotificationSwitch.IsToggled,
+                        CourseEnd = CourseEndDatePicker.Date,
+                        CourseEndToday = CourseNotificationSwitch.IsToggled,
+                        CourseInstructorName = CourseInstructorNameEntryField.Text,
+                        CourseInstructorPhone = CourseInstructorPhoneEntryField.Text,
+                        CourseInstructorEmail = CourseInstructorEmailEntryField.Text,
+                        PerformanceAssessmentName = PANameEntryField.Text,
+                        PerformanceAssessmentStart = PAStartDatePicker.Date,
+                        PaStartToday = PANotificationSwitch.IsToggled,
+                        PerformanceAssessmentEnd = PAEndDatePicker.Date,
+                        PaEndToday = PANotificationSwitch.IsToggled,
+                        ObjectiveAssessmentName = OANameEntryField.Text,
+                        ObjectiveAssessmentStart = OAStartDatePicker.Date,
+                        OaStartToday = OANotificationSwitch.IsToggled,
+                        ObjectiveAssessmentEnd = OAEndDatePicker.Date,
+                        OaEndToday = OANotificationSwitch.IsToggled,
+                        CourseNotes = CourseNotesEntryField.Text
+                    };
+                }
+                catch
+                {
+                    await DisplayAlert("Error", "Please either select a term for this course or tap Unassigned.", "OK");
+                }
+                try
+                {
+                    await App.Database.UpdateCourseAsync(Globals.CourseToSave);
+                }
+                catch
+                {
+                    await DisplayAlert("Error", "Not saved to database properly", "OK");
+
+                }
+                
                 
             }
 

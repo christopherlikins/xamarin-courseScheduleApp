@@ -31,7 +31,29 @@ namespace RegistrarApp.Models
         public DateTime ObjectiveAssessmentEnd { get; set; }
         public bool OaEndToday { get; set; }
         public string CourseNotes { get; set; }
-        public Course(int courseId, int termId, string courseName, string courseStatus, DateTime courseStart, bool courseStartToday, DateTime courseEnd, bool courseEndToday, string courseInstructorName, string courseInstructorPhone, string courseInstructorEmail, string performanceAssessmentName, DateTime performanceAssessmentStart, bool paStartToday, DateTime performanceAssessmentEnd, bool paEndToday, string objectiveAssessmentName, DateTime objectiveAssessmentStart, bool oaStartToday, DateTime objectiveAssessmentEnd, bool oaEndToday, string courseNotes)
+        public Course(
+            int courseId, 
+            int termId, 
+            string courseName, 
+            string courseStatus, 
+            DateTime courseStart, 
+            bool courseStartToday, 
+            DateTime courseEnd, 
+            bool courseEndToday, 
+            string courseInstructorName, 
+            string courseInstructorPhone, 
+            string courseInstructorEmail, 
+            string performanceAssessmentName, 
+            DateTime performanceAssessmentStart, 
+            bool paStartToday, 
+            DateTime performanceAssessmentEnd, 
+            bool paEndToday, 
+            string objectiveAssessmentName, 
+            DateTime objectiveAssessmentStart, 
+            bool oaStartToday, 
+            DateTime objectiveAssessmentEnd, 
+            bool oaEndToday, 
+            string courseNotes)
         {
             CourseID = courseId;
             TermID = termId;

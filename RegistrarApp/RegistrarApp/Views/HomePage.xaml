@@ -3,12 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrarApp.Views.HomePage"
              Title="Home"
-             BackgroundColor="DarkBlue">
+             BackgroundColor="CornflowerBlue">
     <ContentPage.Content>
         <StackLayout>
             <Button x:Name="PopDatabaseButton" Text="Reset Database to Defaults" HorizontalOptions="CenterAndExpand" Clicked="PopDatabaseButton_Clicked"/>
             
-            <Label Text="Welcome to your Future! Study in Sisyphus is taught by Chris Likins."
+            <Label Text="The Sample Data is in the database. To reset the sample data to default click the -Reset Database to Defaults- Button"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="My information as an instructor is attached to the course -Study in Sisyphus-"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="My information as an instructor is attached to the course -Study in Sisyphus-"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>

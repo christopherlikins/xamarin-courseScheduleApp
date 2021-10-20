@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RegistrarApp.Views.EditCoursePage"
              Title="Edit Course"
-             BackgroundColor="DarkBlue">
+             BackgroundColor="CornflowerBlue">
     <StackLayout>
         <ScrollView>
             <StackLayout>
@@ -331,7 +331,7 @@
             </StackLayout>
         </ScrollView>
         <StackLayout>
-            <Button x:Name="UnnassignTermButton" Text="Unassign class from term" Clicked="UnnassignTermButton_Clicked"/>
+            <Button x:Name="UnnassignTermButton" Text="Unassigned" Clicked="UnnassignTermButton_Clicked"/>
             <Label x:Name="CourseAssignedToTermLabel" Text="Assign this class to a term by tapping a term below."/>
             <ListView x:Name="TermsToAssignListListView" ItemTapped="TermsToAssignListListView_ItemTapped"  SelectionMode="Single">
                 <ListView.ItemTemplate>

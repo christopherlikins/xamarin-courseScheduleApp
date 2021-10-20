@@ -4,7 +4,7 @@
              x:Class="RegistrarApp.Views.CoursesThisTermPage"
              Title="Courses this Term"
 
-             BackgroundColor="DarkBlue">
+             BackgroundColor="CornflowerBlue">
 
 
             <StackLayout>

@@ -12,5 +12,6 @@ namespace RegistrarApp.Models
         public static int CurrentTermID { get; set; }
         public static int TermIDToCourseCount { get; set; }
         public static Term TermAssignedToCourse { get; set; }
+        public static Course CourseToSave { get; set; }
     }
 }

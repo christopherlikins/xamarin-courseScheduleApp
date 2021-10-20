@@ -4,7 +4,7 @@
 
              x:Class="RegistrarApp.Views.AddCoursePage"
 
-             BackgroundColor="DarkBlue"
+             BackgroundColor="CornflowerBlue"
              Title="Add Course">
     <StackLayout>
     
@@ -319,7 +319,7 @@
             </StackLayout>
         </ScrollView>
         <StackLayout>
-            <Button x:Name="UnnassignTermButton" Text="Unassign class from term" Clicked="UnnassignTermButton_Clicked"/>
+            <Button x:Name="UnnassignTermButtonAddCoursePage" Text="Unnassigned" Clicked="UnnassignTermButtonAddCoursePage_Clicked"/>
             <Label x:Name="CourseAssignedToTermLabel" Text="Assign this class to a term by tapping a term below."/>
             <ListView x:Name="TermsToAssignListListView" ItemTapped="TermsToAssignListListView_ItemTapped"  SelectionMode="Single">
                 <ListView.ItemTemplate>
