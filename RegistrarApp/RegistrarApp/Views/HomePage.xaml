@@ -7,16 +7,21 @@
     <ContentPage.Content>
         <StackLayout>
             <Button x:Name="PopDatabaseButton" Text="Reset Database to Defaults" HorizontalOptions="CenterAndExpand" Clicked="PopDatabaseButton_Clicked"/>
-            
+            <Label Text="My personal information as an instructor can be found in the Study in Sisyphus course record."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Medium"
+                   FontAttributes="Bold"/>
+            <Label Text="The set of data for evaluation is the terms and courses populated by the code in HomePage.xaml.cs"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Medium"/>
             <Label Text="The Sample Data is in the database. To reset the sample data to default click the -Reset Database to Defaults- Button"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="My information as an instructor is attached to the course -Study in Sisyphus-"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Label Text="My information as an instructor is attached to the course -Study in Sisyphus-"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Medium"/>
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
